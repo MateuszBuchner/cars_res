@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,6 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['can:isAdmin'])->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('index');
+        Route::resource('/users', AdminUserController::class);
     });
 });
