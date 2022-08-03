@@ -12,10 +12,28 @@ class AdminUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
-        return view('admin.users.index', compact('users'));
+        $users = User::query();
+
+        $search_param = $request->query('q');
+
+        if ($search_param) {
+            $users->where(function ($query) use ($search_param) {
+                $query
+                    ->orWhere('name', 'like', "%$search_param%")
+                    ->orWhere('first_name', 'like', "%$search_param%")
+                    ->orWhere('last_name', 'like', "%$search_param%")
+                    ->orWhere('phone_number', 'like', "%$search_param%")
+                    ->orWhere('email', 'like', "%$search_param%");
+            });
+        }
+
+        $users = $users->get();
+
+        return view('admin.users.index', compact('users', 'search_param'));
+
+        $users = User::search(request('search'))->paginate();
     }
 
     /**

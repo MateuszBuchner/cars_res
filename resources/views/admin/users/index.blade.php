@@ -23,6 +23,29 @@
             </div>
         </div>
     </div>
+
+    <header class="topbar" data-navbarbg="skin6">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav float-start me-auto">
+                    <!-- ============================================================== -->
+                    <!-- Search -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
+                            href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span class="font-16">Search</span></a>
+                        <form class="app-search position-absolute" action="{{ route('users.index', request()->query()) }}">
+                            <input type="text" name="q" value="{{$search_param}}" class="form-control" placeholder="Search &amp; enter"> <a
+                                class="srh-btn"><i class="mdi mdi-window-close"></i></a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">

@@ -78,53 +78,6 @@
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                             class="mdi mdi-menu"></i></a>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav float-start me-auto">
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span class="font-16">Search</span></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="mdi mdi-window-close"></i></a>
-                            </form>
-                        </li>
-                    </ul>
-                    <!-- ============================================================== -->
-                    <!-- Right side toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav float-end">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    <form method="POST" action="{{ route('logout') }}">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('adm/assets/images/users/profile.png') }}" alt="user" class="rounded-circle" width="31">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                @csrf
-                                <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                </x-dropdown-link>
-                            </ul>
-                        </li>
-                    </form>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
             </nav>
         </header>
         <!-- ============================================================== -->
@@ -161,6 +114,22 @@
                             <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/"
                                 class="btn d-block w-100 btn-danger text-white" target="_blank">Upgrade to Pro</a>
                         </li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="{{ asset('adm/assets/images/users/profile.png') }}" alt="user" class="rounded-circle" width="31">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                    @csrf
+                                    <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Logout
+                                    </x-dropdown-link>
+                                </ul>
+                            </li>
+                        </form>
                     </ul>
 
                 </nav>
