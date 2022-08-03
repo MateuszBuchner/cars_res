@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\User\ProfilController;
+use App\Http\Controllers\User\UserAddCarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +33,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('index');
         Route::resource('/users', AdminUserController::class);
     });
+    Route::resource('/profil', ProfilController::class);
+    Route::resource('/dodaj-ogloszenie', UserAddCarController::class);
 });

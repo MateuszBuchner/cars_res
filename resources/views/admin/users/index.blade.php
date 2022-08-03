@@ -76,13 +76,19 @@
                                             <td>{{ $user->last_name }}</td>
                                             <td>{{ $user->phone_number }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td></td>
+                                            <td>
+                                                <button type="button" class="btn btn-warning px-3"><i class="fas fa-bolt" aria-hidden="true"></i></button>
+                                                <form method="POST" action="{{ route('users.destroy', $user->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit" role="button">Usuń</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                             {{ $users->links() }}
-
                         </div>
                     </div>
                 </div>

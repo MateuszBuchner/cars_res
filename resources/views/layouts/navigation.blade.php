@@ -17,6 +17,13 @@
                     </x-nav-link>
                 </div>
 
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('profil.index')" :active="request()->routeIs('profil.index')">
+                        {{ __('Zacznij sprzedaż') }}
+                    </x-nav-link>
+                </div>
+
                 <!-- Admin Links -->
                 @can('isAdmin')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

@@ -1,35 +1,21 @@
 <?php
-namespace App\Http\Controllers\Admin;
 
-use App\Models\User;
+namespace App\Http\Controllers\User;
+
+use App\Models\Car;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AdminUserController extends Controller
+class UserAddCarController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $users = User::query();
-        $search_param = $request->query('q');
-
-        if ($search_param) {
-            $users->where(function ($query) use ($search_param) {
-                $query
-                    ->orWhere('name', 'like', "%$search_param%")
-                    ->orWhere('first_name', 'like', "%$search_param%")
-                    ->orWhere('last_name', 'like', "%$search_param%")
-                    ->orWhere('phone_number', 'like', "%$search_param%")
-                    ->orWhere('email', 'like', "%$search_param%");
-            });
-        }
-        $users = $users->paginate(3);
-        return view('admin.users.index', compact('users', 'search_param'));
-        $users = User::search(request('search'))->paginate();
+        //return view('users.add_car');
     }
 
     /**
@@ -39,7 +25,7 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.add_car');
     }
 
     /**
@@ -50,7 +36,10 @@ class AdminUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $car = new Car($request->all());
+        $car->save();
+
+        return redirect(route('index'));
     }
 
     /**
@@ -93,10 +82,8 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-
-        return redirect(route('users.index'));
+        //
     }
 }
