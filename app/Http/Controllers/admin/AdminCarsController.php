@@ -1,21 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserAddCarController extends Controller
+class AdminCarsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //return view('users.add_car');
+        $cars = Car::query();
+        $search_param = $request->query('q');
+
+        if ($search_param) {
+            $cars->where(function ($query) use ($search_param) {
+                $query
+                    ->orWhere('body_type', 'like', "%$search_param%")
+                    ->orWhere('make', 'like', "%$search_param%")
+                    ->orWhere('model', 'like', "%$search_param%")
+                    ->orWhere('first_registration', 'like', "%$search_param%")
+                    ->orWhere('mileage', 'like', "%$search_param%")
+                    ->orWhere('price', 'like', "%$search_param%")
+                    ->orWhere('description', 'like', "%$search_param%");
+            });
+        }
+        $cars = $cars->paginate(3);
+        return view('admin.cars.index', compact('cars', 'search_param'));
+        $cars = Car::search(request('search'))->paginate();
     }
 
     /**
@@ -25,7 +42,7 @@ class UserAddCarController extends Controller
      */
     public function create()
     {
-        return view('users.add_car');
+        //
     }
 
     /**
@@ -36,10 +53,7 @@ class UserAddCarController extends Controller
      */
     public function store(Request $request)
     {
-        $car = new Car($request->all());
-        $car->save();
-
-        return redirect(route('profil.index'));
+        //
     }
 
     /**
@@ -82,8 +96,9 @@ class UserAddCarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Car $car)
     {
-        //
+        $car->delete();
+        return redirect(route('users.index'));
     }
 }

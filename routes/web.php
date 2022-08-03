@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminCarsController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\User\ProfilController;
@@ -32,6 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['can:isAdmin'])->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('index');
         Route::resource('/users', AdminUserController::class);
+        Route::resource('/cars', AdminCarsController::class);
     });
     Route::resource('/profil', ProfilController::class);
     Route::resource('/dodaj-ogloszenie', UserAddCarController::class);
