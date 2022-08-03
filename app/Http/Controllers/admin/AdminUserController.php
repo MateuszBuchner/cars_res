@@ -15,7 +15,6 @@ class AdminUserController extends Controller
     public function index(Request $request)
     {
         $users = User::query();
-
         $search_param = $request->query('q');
 
         if ($search_param) {
@@ -28,11 +27,8 @@ class AdminUserController extends Controller
                     ->orWhere('email', 'like', "%$search_param%");
             });
         }
-
-        $users = $users->get();
-
+        $users = $users->paginate(3);
         return view('admin.users.index', compact('users', 'search_param'));
-
         $users = User::search(request('search'))->paginate();
     }
 
