@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminCarsController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\User\ProfilController;
-use App\Http\Controllers\User\UserAddCarController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\MainController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminCarsController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\UserAddCarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', MainController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,6 +33,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/users', AdminUserController::class);
         Route::resource('/cars', AdminCarsController::class);
     });
-    Route::resource('/profil', ProfilController::class);
     Route::resource('/dodaj-ogloszenie', UserAddCarController::class);
+    Route::resource('/profile', ProfileController::class);
 });

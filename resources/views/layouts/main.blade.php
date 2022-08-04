@@ -16,11 +16,46 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/styl1.css') }}" rel="stylesheet" />
     <!-- responsive style -->
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+    <!-- Navbar -->
+<header>
+    <div class="container-sm">
+        <div class="row">
+            <div class="col">
+                <div class="zobatera">
+                    <img id="logo" src="{{ asset('images/logo.png') }}">
+                </div>
+            </div>
+            <div class="col-6">
+                <a href="#section2" class="links">Znajdź samochód</a>
+                <a href="#section2" class="links">Oferta</a>
+                <x-nav-link :href="route('dodaj-ogloszenie.create')" class="links" :active="request()->routeIs('index')">
+                    {{ __('Wystaw auto') }}
+                </x-nav-link>
+            </div>
+            <div class="col">
+
+                @if (Route::has('login'))
+                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                        @auth
+                            <a href="{{ url('/dashboard') }}" class="btn btn-outline-light">Mój profil</a>
+                        @else
+                            <a href="{{ route('login') }}" class="btn btn-outline-light" >Zaloguj się</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="btn btn-outline-light">Rejestracja</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</header>
     @yield('content')
 </body>
 </html>

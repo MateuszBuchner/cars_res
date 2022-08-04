@@ -19,7 +19,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('profil.index')" :active="request()->routeIs('profil.index')">
+                    <x-nav-link :href="route('dodaj-ogloszenie.create')" :active="request()->routeIs('index')">
                         {{ __('Zacznij sprzedaż') }}
                     </x-nav-link>
                 </div>
