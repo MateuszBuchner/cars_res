@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAddCarRequest;
 
 class UserAddCarController extends Controller
 {
@@ -34,12 +35,13 @@ class UserAddCarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAddCarRequest $request)
     {
-        $car = new Car($request->all());
+
+        $car = new Car($request->validated());
         $car->save();
 
-        return redirect(route('profil.index'));
+        return redirect(route('profile.index'));
     }
 
     /**

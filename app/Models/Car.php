@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\BodyType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,5 +18,9 @@ class Car extends Model
         'mileage',
         'price',
         'description'
+    ];
+
+    protected $bar = [
+        'type' => BodyType::class,
     ];
 }
