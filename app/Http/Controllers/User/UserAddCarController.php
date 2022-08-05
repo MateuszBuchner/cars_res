@@ -6,6 +6,7 @@ use App\Models\Car;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAddCarRequest;
+use App\Models\Usercar;
 
 class UserAddCarController extends Controller
 {
@@ -84,8 +85,10 @@ class UserAddCarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Usercar $usercar, $id)
     {
-        //
+        $usercar = Usercar::find($id);
+        $usercar->delete();
+        return redirect(route('show'));
     }
 }

@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\MainController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminCarsController;
 use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\User\CarController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\UserAddCarController;
@@ -33,8 +31,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['can:isAdmin'])->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('index');
         Route::resource('/users', AdminUserController::class);
-        Route::resource('/cars', AdminCarsController::class);
         Route::get('/show', [CarController::class, 'index'])->name('show');
+        Route::get('/dodaj-ogloszenie/{id}', [UserAddCarController::class,'destroy'])->name('destroy');
+
     });
     Route::resource('/dodaj-ogloszenie', UserAddCarController::class);
     Route::resource('/profile', ProfileController::class);

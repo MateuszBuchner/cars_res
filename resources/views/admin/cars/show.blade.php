@@ -48,31 +48,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($cars as $car)
+                                    @foreach ($usercars as $usercar)
                                         <tr>
-                                            <th scope="row">{{ $car->id }}</th>
-                                            <td>{{ $car->body_type }}</td>
-                                            <td>{{ $car->make }}</td>
-                                            <td>{{ $car->model }}</td>
-                                            <td>{{ $car->first_registration }}</td>
-                                            <td>{{ $car->mileage }}</td>
-                                            <td>{{ $car->price }}</td>
-                                            <td>{{ $car->description }}</td>
+                                            <th scope="row">{{ $usercar->id }}</th>
+                                            <td>{{ $usercar->body_type }}</td>
+                                            <td>{{ $usercar->make }}</td>
+                                            <td>{{ $usercar->model }}</td>
+                                            <td>{{ $usercar->first_registration }}</td>
+                                            <td>{{ $usercar->mileage }}</td>
+                                            <td>{{ $usercar->price }}</td>
+                                            <td>{{ $usercar->description }}</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning px-3"><i class="fas fa-bolt" aria-hidden="true"></i></button>
-                                                <form method="POST" action="{{ route('cars.destroy', $car->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
+                                                <form method="POST" action="{{ route('dodaj-ogloszenie.destroy', $usercar->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit" role="button">Usuń</button>
                                                 </form>
                                             </td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
-
-                            {{-- {{ $cars->links() }} --}}
-
                         </div>
                     </div>
                 </div>
