@@ -15,12 +15,6 @@
                   </nav>
                 <h1 class="mb-0 fw-bold">Basic Table</h1>
             </div>
-            <div class="col-6">
-                <div class="text-end upgrade-btn">
-                    <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" class="btn btn-primary text-white"
-                        target="_blank">Upgrade to Pro</a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -34,13 +28,14 @@
                     <!-- ============================================================== -->
                     <!-- Search -->
                     <!-- ============================================================== -->
-                    <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                            href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span class="font-16">Search</span></a>
-                        <form class="app-search position-absolute" action="{{ route('users.index', request()->query()) }}">
-                            <input type="text" name="q" value="{{$search_param}}" class="form-control" placeholder="Search &amp; enter"> <a
-                                class="srh-btn"><i class="mdi mdi-window-close"></i></a>
-                        </form>
-                    </li>
+                    <nav class="navbar navbar-light bg-light">
+                        <div class="container-fluid">
+                            <form class="d-flex"action="{{ route('users.index', request()->query()) }}">
+                                <input class="form-control me-2" name="q" value="{{$search_param}}" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
                 </ul>
             </div>
         </nav>

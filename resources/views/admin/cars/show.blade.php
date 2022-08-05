@@ -24,29 +24,6 @@
         </div>
     </div>
 
-    <header class="topbar" data-navbarbg="skin6">
-        <nav class="navbar top-navbar navbar-expand-md navbar-light">
-            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                <!-- ============================================================== -->
-                <!-- toggle and nav items -->
-                <!-- ============================================================== -->
-                <ul class="navbar-nav float-start me-auto">
-                    <!-- ============================================================== -->
-                    <!-- Search -->
-                    <!-- ============================================================== -->
-                    <nav class="navbar navbar-light bg-light">
-                        <div class="container-fluid">
-                            <form class="d-flex"action="{{ route('cars.index', request()->query()) }}">
-                                <input class="form-control me-2" name="q" value="{{$search_param}}" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </nav>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -71,7 +48,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($cars as $car)
+                                    {{-- @foreach ($cars as $car)
                                         <tr>
                                             <th scope="row">{{ $car->id }}</th>
                                             <td>{{ $car->body_type }}</td>
@@ -90,10 +67,12 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endforeach --}}
                                 </tbody>
                             </table>
-                            {{ $cars->links() }}
+
+                            {{-- {{ $cars->links() }} --}}
+
                         </div>
                     </div>
                 </div>
