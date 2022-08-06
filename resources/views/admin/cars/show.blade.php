@@ -45,6 +45,7 @@
                                         <th scope="col">Cena</th>
                                         <th scope="col">Opis</th>
                                         <th scope="col">Opis</th>
+                                        <th scope="col">Akcja</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -58,6 +59,7 @@
                                             <td>{{ $usercar->mileage }}</td>
                                             <td>{{ $usercar->price }}</td>
                                             <td>{{ $usercar->description }}</td>
+                                            <td>{{ $usercar->images->count() }}</td>
                                             <td>
                                                 <form method="POST" action="{{ route('dodaj-ogloszenie.destroy', $usercar->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
                                                     @csrf
