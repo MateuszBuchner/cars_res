@@ -44,7 +44,7 @@
                                         <th scope="col">Przebieg</th>
                                         <th scope="col">Cena</th>
                                         <th scope="col">Opis</th>
-                                        <th scope="col">Opis</th>
+                                        <th scope="col">Zdjęcia</th>
                                         <th scope="col">Akcja</th>
                                     </tr>
                                 </thead>

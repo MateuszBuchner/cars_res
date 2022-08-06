@@ -86,6 +86,12 @@ header{
     background-size: cover;
     position: relative;
 }}
+
+.header{
+    background-color: #050505e0;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
 /*----------- header------------ */
 /*----------- User Add Car------------ */
 
@@ -118,5 +124,28 @@ header{
 .widt{
     width: 500px;
 }
+
+.testujemy{
+    width: 100%;
+    margin-top: 10vh;
+}
+
+.form{
+    background-color: #ddd5d53d;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.obrazek{
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
 
 /*----------- User Add Car------------ */
