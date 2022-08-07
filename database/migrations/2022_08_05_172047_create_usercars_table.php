@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('body_type');
             $table->string('make');
             $table->string('model');
-            $table->decimal('first_registration');
-            $table->decimal('mileage');
+            $table->string('first_registration');
+            $table->string('mileage');
             $table->decimal('price');
             $table->string('description');
             $table->timestamps();

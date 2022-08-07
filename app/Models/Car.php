@@ -11,13 +11,6 @@ class Car extends Model
     use HasFactory;
 
     protected $fillable =[
-        'body_type',
-        'make',
-        'model',
-        'first_registration',
-        'mileage',
-        'price',
-        'description'
     ];
 
     protected $bar = [

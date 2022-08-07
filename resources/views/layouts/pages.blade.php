@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,20 +26,19 @@
 <header>
     <div class="container-sm">
         <div class="row header">
-            <div class="col">
+            <div class="col coll2">
                 <div class="zobatera">
                     <img id="logo" src="{{ asset('images/logo.png') }}">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 texto">
                 <a href="#section2" class="links">Znajdź samochód</a>
                 <a href="#section2" class="links">Oferta</a>
                 <x-nav-link :href="route('dodaj-ogloszenie.create')" class="links" :active="request()->routeIs('index')">
                     {{ __('Wystaw auto') }}
                 </x-nav-link>
             </div>
-            <div class="col">
-
+            <div class="col coll2">
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth

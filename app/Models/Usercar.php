@@ -10,7 +10,9 @@ class Usercar extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = [
+
+    ];
 
     public function images(){
         return $this->hasMany(Image::class);

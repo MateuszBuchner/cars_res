@@ -63,19 +63,27 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="mb-3 wid">
+                        <label for="image" class="form-label" >Wybierz zdjęcie podglądowe</label>
+                        <input class="form-control @error('mainimage') is-invalid @enderror" type="file" name="mainimage" id="formFile">
+                        @error('mainimage')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
                     <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+                        <label for="formFileMultiple" class="form-label">Wstaw wszystkie zdjęcia samochodu</label>
                         <input type="file" name="images[]" accept="image/*" id="" class="form-control @error('images') is-invalid @enderror" multiple>
                         @error('images')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                        </div>
+                    </div>
+
                     <button type="submit" class="btn btn-dark">Submit</button>
                 </form>
             </div>
         </div>
       </div>
-      <div class="col">
+      <div class="col imagdown">
         <div class="row-image">
             <div class="col2">
                 <img src="/images/as.png" class="obrazek" alt="">

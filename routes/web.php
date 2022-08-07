@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\MainController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Cars\CarsController;
 use App\Http\Controllers\User\CarController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\UserAddCarController;
@@ -38,6 +39,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('/dodaj-ogloszenie', UserAddCarController::class);
     Route::resource('/profile', ProfileController::class);
     Route::post('/add-car', [CarController::class, 'store']);
+
+    Route::get('/cars', [CarsController::class, 'index']);
 
 
 });

@@ -31,6 +31,7 @@ class StoreAddCarRequest extends FormRequest
             'mileage' => 'required',
             'price' => 'required',
             'description' => 'required',
+            'mainimage'=>'required','image',
         ];
     }
 }
