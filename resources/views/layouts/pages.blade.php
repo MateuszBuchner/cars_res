@@ -14,6 +14,10 @@
     <!-- font awesome style -->
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styl1.css') }}" rel="stylesheet" />
@@ -22,18 +26,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Navbar -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 <header>
     <div class="container-sm">
         <div class="row header">
             <div class="col coll2">
                 <div class="zobatera">
-                    <img id="logo" src="{{ asset('images/logo.png') }}">
+                    <a href="/"><img id="logo" src="{{ asset('images/logo.png') }}"></a>
                 </div>
             </div>
             <div class="col-6 texto">
                 <a href="#section2" class="links">Znajdź samochód</a>
-                <a href="#section2" class="links">Oferta</a>
+                <a href="{{ route('cars') }}" class="links">Oferta</a>
                 <x-nav-link :href="route('dodaj-ogloszenie.create')" class="links" :active="request()->routeIs('index')">
                     {{ __('Wystaw auto') }}
                 </x-nav-link>

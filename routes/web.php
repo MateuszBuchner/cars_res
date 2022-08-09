@@ -27,6 +27,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/cars', [CarsController::class, 'index'])->name('cars');
+Route::get('/cars/{id}', [CarController::class, 'show'])->name('caropis');
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['can:isAdmin'])->prefix('admin')->group(function () {
@@ -39,8 +42,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('/dodaj-ogloszenie', UserAddCarController::class);
     Route::resource('/profile', ProfileController::class);
     Route::post('/add-car', [CarController::class, 'store']);
-
-    Route::get('/cars', [CarsController::class, 'index']);
-
-
 });

@@ -28,12 +28,12 @@
         <div class="row main-row">
             <div class="col coll2">
                 <div class="zobatera">
-                    <img id="logo" src="{{ asset('images/logo.png') }}">
+                    <a href="/"><img id="logo" src="{{ asset('images/logo.png') }}"></a>
                 </div>
             </div>
             <div class="col-6 texto">
                 <a href="#section2" class="links">Znajdź samochód</a>
-                <a href="#section2" class="links">Oferta</a>
+                <a href="{{ route('cars') }}" class="links">Oferta</a>
                 <x-nav-link :href="route('dodaj-ogloszenie.create')" class="links" :active="request()->routeIs('index')">
                     {{ __('Wystaw auto') }}
                 </x-nav-link>

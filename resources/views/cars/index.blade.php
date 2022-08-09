@@ -13,6 +13,7 @@
                 <h6 class="czcionka">Rok: {{ $usercar->first_registration }} Przebieg: {{ $usercar->mileage }} </h6>            </div>
             <div class="col">
                 <h5 class="czcionka price">Cena: {{ $usercar->price }}zł</h5>
+                <a href="{{ route('caropis',$usercar->id) }}" class="btn btn-outline-dark">view</a>
             </div>
         </div>
         @endforeach

@@ -42,6 +42,12 @@ class CarController extends Controller
             }
         }
         return back();
-
+    }
+    public function show(Usercar $usercar,$id){
+        $usercars = Usercar::all();
+        $usercars = Usercar::find($id);
+        if(!$usercars) abort(404);
+        $images = $usercars->images;
+        return view('cars.desc',compact('usercars', 'images'));
     }
 }
