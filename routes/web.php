@@ -37,6 +37,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/users', AdminUserController::class);
         Route::get('/show', [CarController::class, 'index'])->name('show');
         Route::get('/dodaj-ogloszenie/{id}', [UserAddCarController::class,'destroy'])->name('destroy');
+        Route::post('/approve/{id}', [UserAddCarController::class,'edit'])->name('approve-usercar');
 
     });
     Route::resource('/dodaj-ogloszenie', UserAddCarController::class);

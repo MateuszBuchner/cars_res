@@ -10,8 +10,16 @@ class Usercar extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-
+    protected $fillable = [
+        'body_type',
+        'make',
+        'model',
+        'first_registration',
+        'mileage',
+        'price',
+        'description',
+        'mainimage',
+        'status',
     ];
 
     public function images(){

@@ -64,7 +64,11 @@ class UserAddCarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usercar = Usercar::where('id', $id)->update([
+            'status' => 'approve'
+        ]);
+
+        return back();
     }
 
     /**

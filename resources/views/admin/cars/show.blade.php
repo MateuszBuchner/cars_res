@@ -44,6 +44,7 @@
                                         <th scope="col">Przebieg</th>
                                         <th scope="col">Cena</th>
                                         <th scope="col">Opis</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Zdjęcia</th>
                                         <th scope="col">Akcja</th>
                                     </tr>
@@ -59,12 +60,18 @@
                                             <td>{{ $usercar->mileage }}</td>
                                             <td>{{ $usercar->price }}</td>
                                             <td>{{ $usercar->description }}</td>
+                                            <td><span>{{ $usercar->status }}</span></td>
                                             <td>{{ $usercar->images->count() }}</td>
                                             <td>
                                                 <form method="POST" action="{{ route('dodaj-ogloszenie.destroy', $usercar->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit" role="button">Usuń</button>
+                                                </form>
+
+                                                <form action="{{ route('approve-usercar',$usercar->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-success">Akceptuj</button>
                                                 </form>
                                             </td>
                                         </tr>
