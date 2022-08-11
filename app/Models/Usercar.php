@@ -20,9 +20,14 @@ class Usercar extends Model
         'description',
         'mainimage',
         'status',
+        'user_id'
     ];
 
     public function images(){
         return $this->hasMany(Image::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

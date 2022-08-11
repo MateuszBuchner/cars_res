@@ -28,7 +28,8 @@ class CarController extends Controller
             'mileage' => $request->mileage,
             'price' => $request->price,
             'description' => $request->description,
-            'mainimage' => $mainimage
+            'mainimage' => $mainimage,
+            'user_id' => $user_id = auth()->user()->id,
         ]);
 
         if($request->has('images')){

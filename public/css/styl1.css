@@ -246,3 +246,21 @@ header{
     background-color: rgb(46, 46, 46);
     border-radius: 1vh;
 }
+
+.desc-car{
+    width: 100%;
+}
+
+.user-desc{
+    display: flex;
+    flex-direction: column;
+}
+
+.rounded{
+    height: 10vh;
+}
+
+.testtalio{
+    height: 300px;
+    width: 1rem;
+}
