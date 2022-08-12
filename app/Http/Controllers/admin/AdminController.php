@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Image;
+use App\Models\Usercar;
 
 class AdminController extends Controller
 {
@@ -14,7 +17,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $users = User::count();
+        $usercars = Usercar::count();
+        $qual_admin = User::where('role','admin')->count();
+        $qual_cars = Usercar::where('status', 'waiting')->count();
+        $qual_img_cars = Image::count();
+        return view('admin.index',compact('users','usercars','qual_admin','qual_cars','qual_img_cars'));
     }
 
     /**

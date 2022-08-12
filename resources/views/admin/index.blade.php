@@ -2,9 +2,6 @@
 
 @section('content')
 <div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
     <div class="page-breadcrumb">
         <div class="row align-items-center">
             <div class="col-6">
@@ -16,24 +13,9 @@
                   </nav>
                 <h1 class="mb-0 fw-bold">Dashboard</h1>
             </div>
-            <div class="col-6">
-                <div class="text-end upgrade-btn">
-                    <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" class="btn btn-primary text-white"
-                        target="_blank">Upgrade to Pro</a>
-                </div>
-            </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
     <div class="container-fluid">
-        <!-- ============================================================== -->
-        <!-- Sales chart -->
-        <!-- ============================================================== -->
         <div class="row">
             <div class="col-lg-8">
                 <div class="card">
@@ -61,18 +43,18 @@
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Weekly Stats</h4>
-                        <h6 class="card-subtitle">Average sales</h6>
+                        <h4 class="card-title">Statystyki Bazy</h4>
+                        <h6 class="card-subtitle">Liczby</h6>
                         <div class="mt-5 pb-3 d-flex align-items-center">
                             <span class="btn btn-primary btn-circle d-flex align-items-center">
                                 <i class="mdi mdi-cart-outline fs-4" ></i>
                             </span>
                             <div class="ms-3">
-                                <h5 class="mb-0 fw-bold">Top Sales</h5>
-                                <span class="text-muted fs-6">Johnathan Doe</span>
+                                <h5 class="mb-0 fw-bold">Użytkownicy</h5>
+                                <span class="text-muted fs-6">Liczba zarejestrowanych kont</span>
                             </div>
                             <div class="ms-auto">
-                                <span class="badge bg-light text-muted">+68%</span>
+                                <span class="badge bg-light text-muted">{{ $users }}</span>
                             </div>
                         </div>
                         <div class="py-3 d-flex align-items-center">
@@ -80,11 +62,11 @@
                                 <i class="mdi mdi-star-circle fs-4" ></i>
                             </span>
                             <div class="ms-3">
-                                <h5 class="mb-0 fw-bold">Best Seller</h5>
-                                <span class="text-muted fs-6">MaterialPro Admin</span>
+                                <h5 class="mb-0 fw-bold">Samochody</h5>
+                                <span class="text-muted fs-6">Liczba pojazdów</span>
                             </div>
                             <div class="ms-auto">
-                                <span class="badge bg-light text-muted">+68%</span>
+                                <span class="badge bg-light text-muted">{{ $usercars }}</span>
                             </div>
                         </div>
                         <div class="py-3 d-flex align-items-center">
@@ -92,11 +74,11 @@
                                 <i class="mdi mdi-comment-multiple-outline text-white fs-4" ></i>
                             </span>
                             <div class="ms-3">
-                                <h5 class="mb-0 fw-bold">Most Commented</h5>
-                                <span class="text-muted fs-6">Ample Admin</span>
+                                <h5 class="mb-0 fw-bold">Admin</h5>
+                                <span class="text-muted fs-6">Liczba przydzielonych administratorów</span>
                             </div>
                             <div class="ms-auto">
-                                <span class="badge bg-light text-muted">+68%</span>
+                                <span class="badge bg-light text-muted">{{ $qual_admin }}</span>
                             </div>
                         </div>
                         <div class="py-3 d-flex align-items-center">
@@ -104,11 +86,11 @@
                                 <i class="mdi mdi-diamond fs-4 text-white" ></i>
                             </span>
                             <div class="ms-3">
-                                <h5 class="mb-0 fw-bold">Top Budgets</h5>
-                                <span class="text-muted fs-6">Sunil Joshi</span>
+                                <h5 class="mb-0 fw-bold">Akceptacja</h5>
+                                <span class="text-muted fs-6">Liczba postów do zakceptowania</span>
                             </div>
                             <div class="ms-auto">
-                                <span class="badge bg-light text-muted">+15%</span>
+                                <span class="badge bg-light text-muted">{{ $qual_cars }}</span>
                             </div>
                         </div>
 
@@ -117,23 +99,17 @@
                                 <i class="mdi mdi-content-duplicate fs-4 text-white" ></i>
                             </span>
                             <div class="ms-3">
-                                <h5 class="mb-0 fw-bold">Best Designer</h5>
-                                <span class="text-muted fs-6">Nirav Joshi</span>
+                                <h5 class="mb-0 fw-bold">Zdjęcia</h5>
+                                <span class="text-muted fs-6">Liczba zdjęc samochodów</span>
                             </div>
                             <div class="ms-auto">
-                                <span class="badge bg-light text-muted">+90%</span>
+                                <span class="badge bg-light text-muted">{{ $qual_img_cars }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Sales chart -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Table -->
-        <!-- ============================================================== -->
         <div class="row">
             <!-- column -->
             <div class="col-12">
@@ -266,12 +242,6 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Table -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Recent comment and chats -->
-        <!-- ============================================================== -->
         <div class="row">
             <!-- column -->
             <div class="col-lg-6">
@@ -398,22 +368,7 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Recent comment and chats -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <footer class="footer text-center">
-        All Rights Reserved by Flexy Admin. Designed and Developed by <a
-            href="https://www.wrappixel.com">WrapPixel</a>.
-    </footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
 </div>
+
 @endsection
