@@ -153,6 +153,7 @@ header{
 }
 
 /*----------- User Add Car------------ */
+/*----------- Cars------------ */
 
 
 .testbox{
@@ -176,6 +177,10 @@ header{
 .containerek3{
     margin-left: 10%;
     margin-right: 10%;
+}
+.containerek4{
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .imagecar{
@@ -209,7 +214,6 @@ header{
     display: flex;
 }
 
-
 .columnflex{
     flex: 1 0 0%;
     display: flex;
@@ -229,7 +233,14 @@ header{
 }
 
 
+.blok{
+    max-height: 650px;
+    width: 100%;
+    margin: auto;
+}
+
 .tescik{
+    min-height: 470px;
     max-height: 650px;
     width: 100%;
     margin: auto;
@@ -256,11 +267,54 @@ header{
     flex-direction: column;
 }
 
-.rounded{
-    height: 10vh;
+.cars-link{
+    text-decoration: none;
+}
+
+.tekst-desc-car{
+    font-weight: 200;
+}
+
+.tekst-desc-car-2{
+    font-weight: 700;
+    color: red;
+    margin-top: 5%;
+    margin-bottom: 20%;
 }
 
 .testtalio{
     height: 300px;
     width: 1rem;
+}
+
+.car-desc-conter{
+    width: 100%;
+    height: 10vh;
+}
+
+.car-descrip{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*----------- Cars------------ */
+/*----------- Profile------------ */
+
+
+  .card-profile-image img {
+    position: absolute;
+    left: 50%;
+    max-width: 180px;
+    transition: all .15s ease;
+    transform: translate(-50%, -30%);
+    border-radius: .375rem;
+  }
+  .card-profile-stats {
+    padding: 1rem 0;
+  }
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
 }

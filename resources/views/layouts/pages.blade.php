@@ -37,9 +37,9 @@
                 </div>
             </div>
             <div class="col-6 texto">
-                <a href="#section2" class="links">Znajdź samochód</a>
-                <a href="{{ route('cars') }}" class="links">Oferta</a>
-                <x-nav-link :href="route('dodaj-ogloszenie.create')" class="links" :active="request()->routeIs('index')">
+                <a href="#section2" style="color: white; text-decoration: none;" class="links">Znajdź samochód</a>
+                <a href="{{ route('cars') }}" style="color: white; text-decoration: none;" class="links">Oferta</a>
+                <x-nav-link :href="route('dodaj-ogloszenie.create')" style="color: white; text-decoration: none;" class="links" :active="request()->routeIs('index')">
                     {{ __('Wystaw auto') }}
                 </x-nav-link>
             </div>
@@ -47,7 +47,7 @@
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-outline-light">Mój profil</a>
+                            <a href="{{ url('/profile') }}" class="btn btn-outline-light">Mój profil</a>
                         @else
                             <a href="{{ route('login') }}" class="btn btn-outline-light" >Zaloguj się</a>
                             @if (Route::has('register'))
