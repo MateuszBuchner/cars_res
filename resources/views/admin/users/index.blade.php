@@ -13,7 +13,7 @@
                       <li class="breadcrumb-item active" aria-current="page">Basic Table</li>
                     </ol>
                   </nav>
-                <h1 class="mb-0 fw-bold">Basic Table</h1>
+                <h1 class="mb-0 fw-bold">Lista użytkowników</h1>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
                         <div class="container-fluid">
                             <form class="d-flex"action="{{ route('users.index', request()->query()) }}">
                                 <input class="form-control me-2" name="q" value="{{$search_param}}" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <button class="btn btn-outline-primary" type="submit">Search</button>
                             </form>
                         </div>
                     </nav>
@@ -72,7 +72,6 @@
                                             <td>{{ $user->phone_number }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning px-3"><i class="fas fa-bolt" aria-hidden="true"></i></button>
                                                 <form method="POST" action="{{ route('users.destroy', $user->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
                                                     @csrf
                                                     @method('DELETE')

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Image;
 use App\Models\Usercar;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -22,7 +23,13 @@ class AdminController extends Controller
         $qual_admin = User::where('role','admin')->count();
         $qual_cars = Usercar::where('status', 'waiting')->count();
         $qual_img_cars = Image::count();
-        return view('admin.index',compact('users','usercars','qual_admin','qual_cars','qual_img_cars'));
+
+        $user_data = User::select(DB::raw("COUNT(*) as count"))
+        ->whereYear("created_at",date('Y'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('count');
+
+        return view('admin.index',compact('users','usercars','qual_admin','qual_cars','qual_img_cars','user_data'));
     }
 
     /**
