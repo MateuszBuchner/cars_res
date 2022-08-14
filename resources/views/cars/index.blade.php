@@ -31,8 +31,40 @@
                             <label for="">Cena</label>
                             <input type="text" class="form-control" placeholder="Cena" name="price">
                         </div>
+                        <div class="col-md-3">
+                            <label for="">Przebieg</label>
+                            <input type="text" class="form-control" placeholder="Przebieg" name="mileage">
+                        </div>
+                        <div class="col-md-3">
+                            <label>Rodzaj paliwa</label>
+                            <select class="form-select" aria-label="Default select example" name="fuel" placeholder="Rodzaj paliwa">
+                                <option value="" disabled selected>Rodzaj paliwa</option>
+                                @foreach (App\Enums\Fuel::cases() as $type)
+                                    <option value="{{ $type->value }}">{{ $type->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Skrzynia biegów</label>
+                            <select class="form-select" aria-label="Default select example" name="transmission" placeholder="Rodzaj skrzyni">
+                                <option value="" disabled selected>Rodzaj skrzyni</option>
+                                @foreach (App\Enums\Transmission::cases() as $type)
+                                    <option value="{{ $type->value }}">{{ $type->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Stan zużycia</label>
+                            <select class="form-select" aria-label="Default select example" name="state_of_wear" placeholder="Stopień zużycia">
+                                <option value="" disabled selected>Stopień zużycia</option>
+                                @foreach (App\Enums\StateOfWear::cases() as $type)
+                                    <option value="{{ $type->value }}">{{ $type->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-                    <button type="submit" class="bnt btn-primary">Search</button>
+                    <br>
+                    <button type="submit" class="btn btn-dark" style="float: right">Znajdz ogłoszenie</button>
                 </form>
             </div>
         </div>
@@ -53,7 +85,6 @@
                     <h5 class="czcionka price">Cena: {{ $usercar->price }}zł</h5>
                 </div>
             </div>
-
             </a>
         @endif
         @endforeach

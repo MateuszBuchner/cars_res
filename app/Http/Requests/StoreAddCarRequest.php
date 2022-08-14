@@ -32,6 +32,9 @@ class StoreAddCarRequest extends FormRequest
             'price' => 'required|numeric',
             'description' => 'required|max:1500',
             'mainimage'=>'required','image',
+            'fuel'=>'required',
+            'state_of_wear'=>'required',
+            'transmission'=>'required',
         ];
     }
 }

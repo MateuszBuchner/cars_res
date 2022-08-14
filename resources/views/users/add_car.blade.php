@@ -77,15 +77,56 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
-                    <button type="submit" class="btn btn-dark">Submit</button>
-                </form>
             </div>
         </div>
       </div>
       <div class="col imagdown">
         <div class="row-image">
             <div class="col2">
+                <div class="container tp1">
+                    <div class="test shadow-lg p-3 mb-5 bg-white rounded">
+                            <div class="mb-3 widt">
+                                <label for="exampleFormControlInput1" class="form-label">Paliwo</label>
+                                <select class="form-select @error('fuel') is-invalid @enderror" name="fuel" aria-label="Default select example">
+                                    <option selected>Podaj paliwo</option>
+                                    @foreach (App\Enums\Fuel::cases() as $type)
+                                        <option value="{{ $type->value }}">{{ $type->name }}</option>
+                                    @endforeach
+                                    @error('fuel')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </select>
+                            </div>
+
+                            <div class="mb-3 widt">
+                                <label for="exampleFormControlInput1" class="form-label">Skrzynia biegów</label>
+                                <select class="form-select @error('transmission') is-invalid @enderror" name="transmission" aria-label="Default select example">
+                                    <option selected>Podaj skrzynie biegów</option>
+                                    @foreach (App\Enums\Transmission::cases() as $type)
+                                        <option value="{{ $type->value }}">{{ $type->name }}</option>
+                                    @endforeach
+                                    @error('transmission')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </select>
+                            </div>
+
+                            <div class="mb-3 widt">
+                                <label for="exampleFormControlInput1" class="form-label">Stan zużycia</label>
+                                <select class="form-select @error('state_of_wear') is-invalid @enderror" name="state_of_wear" aria-label="Default select example">
+                                    <option selected>Podaj stan zużycia</option>
+                                    @foreach (App\Enums\StateOfWear::cases() as $type)
+                                        <option value="{{ $type->value }}">{{ $type->name }}</option>
+                                    @endforeach
+                                    @error('state_of_wear')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </form>
+                    </div>
+                </div>
                 <img src="/images/as.png" class="obrazek" alt="">
             </div>
         </div>

@@ -24,14 +24,20 @@ class CarsController extends Controller
 
     public function search(Request $request)
     {
-        $get_make = $request->search_name;
+        $get_make = $request->make;
         $get_body_type = $request->body_type;
         $get_first_registration = $request->first_registration;
         $get_price = $request->price;
+        $get_fuel = $request->fuel;
+        $get_transmission = $request->transmission;
+        $get_state_of_wear = $request->state_of_wear;
+
         $usercars = Usercar::orWhere('make','LIKE','%'.$get_make.'%')
         ->where('body_type','LIKE','%'.$get_body_type.'%')
         ->where('first_registration','LIKE','%'.$get_first_registration.'%')
-        ->where('price', '>=', $get_price)
+        ->where('fuel','LIKE','%'.$get_fuel.'%')
+        ->where('state_of_wear','LIKE','%'.$get_state_of_wear.'%')
+
         ->get();
         return view('cars.search',compact('usercars'));
     }

@@ -20,7 +20,10 @@ class Usercar extends Model
         'description',
         'mainimage',
         'status',
-        'user_id'
+        'user_id',
+        'fuel',
+        'state_of_wear',
+        'transmission'
     ];
 
     public function images(){
