@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('first_registration');
             $table->string('mileage');
             $table->decimal('price');
-            $table->string('description');
+            $table->longText('description');
             $table->timestamps();
         });
     }

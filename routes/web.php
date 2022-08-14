@@ -28,6 +28,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/cars', [CarsController::class, 'index'])->name('cars');
+Route::get('/cars/search', [CarsController::class, 'search'])->name('cars.search');
 Route::get('/cars/{id}', [CarController::class, 'show'])->name('caropis');
 
 

@@ -21,6 +21,21 @@ class CarsController extends Controller
         return view('cars.index', compact('usercars','images'));
     }
 
+
+    public function search(Request $request)
+    {
+        $get_make = $request->search_name;
+        $get_body_type = $request->body_type;
+        $get_first_registration = $request->first_registration;
+        $get_price = $request->price;
+        $usercars = Usercar::orWhere('make','LIKE','%'.$get_make.'%')
+        ->where('body_type','LIKE','%'.$get_body_type.'%')
+        ->where('first_registration','LIKE','%'.$get_first_registration.'%')
+        ->where('price', '>=', $get_price)
+        ->get();
+        return view('cars.search',compact('usercars'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

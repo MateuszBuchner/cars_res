@@ -27,10 +27,10 @@ class StoreAddCarRequest extends FormRequest
             'body_type' => 'required',
             'make' => 'required',
             'model' => 'required',
-            'first_registration' => 'required',
-            'mileage' => 'required',
-            'price' => 'required',
-            'description' => 'required',
+            'first_registration' => 'required|numeric',
+            'mileage' => 'required|numeric',
+            'price' => 'required|numeric',
+            'description' => 'required|max:1500',
             'mainimage'=>'required','image',
         ];
     }
