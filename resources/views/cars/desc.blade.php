@@ -21,7 +21,6 @@
                         </button>
                 </div>
             </div>
-
         </div>
         <div class="col-6 col-md-4 blok">
             <div class="car-desc-conter">
@@ -45,9 +44,67 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
+
+
+
+<div class="containerek containerek3 ">
+    <div class="row g-0 text-center blok shadow-lg p-3 mb-5 bg-body rounded">
+        <div class="col-sm-6 col-md-8 blok tescik">
+            <table class="table-light" id="table-widt">
+                <tbody>
+                <tr>
+                    <td><h6>Typ nadwozia:</h6></td>
+                    <td><h6>{{ $usercars->body_type }}</h6></td>
+                </tr>
+                <tr>
+                    <td><h6>Marka pojazdu:</h6></td>
+                    <td><h6>{{ $usercars->make }}</h6></td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td><h6>Model pojazdu:</h6></td>
+                    <td><h6>{{ $usercars->model }}</h6></td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td><h6>Pierwsza rejestracja:</h6></td>
+                    <td><h6>{{ $usercars->first_registration }}</h6></td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td><h6>Przebieg:</h6></td>
+                    <td><h6>{{ $usercars->mileage }}</h6></td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td><h6>Rodzaj paliwa:</h6></td>
+                    <td><h6>{{ $usercars->fuel }}</h6></td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td><h6>Stan zużycia:</h6></td>
+                    <td><h6>{{ $usercars->state_of_wear }}</h6></td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td><h6>Skrzynia biegów:</h6></td>
+                    <td><h6>{{ $usercars->transmission }}</h6></td>
+                </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6 col-md-4 blok">
+            <div class="car-desc-conter">
+                <h6>{{ $usercars->description }}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
 

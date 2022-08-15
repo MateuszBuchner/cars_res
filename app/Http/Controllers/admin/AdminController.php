@@ -36,7 +36,7 @@ class AdminController extends Controller
 
         $datas = array(0,0,0,0,0,0,0,0,0,0,0,0);
             foreach($months as $index => $month){
-                $datas[$month] = $user_data[$index];
+                $datas[$month-1] = $user_data[$index];
             }
 
 
@@ -52,7 +52,7 @@ class AdminController extends Controller
 
         $datas_cars = array(0,0,0,0,0,0,0,0,0,0,0,0);
             foreach($months_cars as $index => $month){
-                $datas_cars[$month] = $usercars_data[$index];
+                $datas_cars[$month-1] = $usercars_data[$index];
             }
 
 

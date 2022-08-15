@@ -169,7 +169,7 @@
         },
 
         series:[{
-            name:'Nowi użytkownicy',
+            name:'Nowe samochody',
             data:datas_cars
         }],
 

@@ -60,12 +60,12 @@
                                                 <form method="POST" action="{{ route('dodaj-ogloszenie.destroy', $usercar->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger" type="submit" role="button">Usuń</button>
+                                                    <button class="btn btn-danger" type="submit" role="button"><i class="mdi mdi-close"></i></button>
                                                 </form>
 
                                                 <form action="{{ route('approve-usercar',$usercar->id) }}" method="POST">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-success">Akceptuj</button>
+                                                    <button type="submit" class="btn btn-success"><i class="mdi mdi-check"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

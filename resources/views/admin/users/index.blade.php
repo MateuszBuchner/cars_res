@@ -75,7 +75,8 @@
                                                 <form method="POST" action="{{ route('users.destroy', $user->id) }}" onsubmit="return confirm('Na pewno chcesz usunąć?');">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger" type="submit" role="button">Usuń</button>
+                                                    <button class="btn btn-danger" type="submit" role="button"><i class="mdi mdi-close"></i></button>
+
                                                 </form>
                                             </td>
                                         </tr>
