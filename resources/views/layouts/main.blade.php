@@ -24,7 +24,7 @@
 <body>
     <!-- Navbar -->
 <header>
-    <div class="container-sm">
+    <div class="container-sm" id="header-min">
         <div class="row main-row">
             <div class="col coll2">
                 <div class="zobatera">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-6 texto">
-                <a href="#section2" class="links" style="color: white; text-decoration: none;">Znajdź samochód</a>
+                <a href="#section2" class="links" style="color: white; text-decoration: none;">O nas</a>
                 <a href="{{ route('cars') }}" style="color: white; text-decoration: none;" class="links">Oferta</a>
                 <x-nav-link :href="route('dodaj-ogloszenie.create')" style="color: white; text-decoration: none;" class="links" :active="request()->routeIs('index')">
                     {{ __('Wystaw auto') }}
@@ -43,10 +43,10 @@
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth
-                            <a href="{{ url('/profile') }}" class="btn btn-outline-light">Mój profil</a>
+                            <a href="{{ url('/profile') }}" class="btn btn-outline-light" id="bnt-prof">Mój profil</a>
                                 @can('isAdmin')
-                                <div class="btn btn-outline-light">
-                                    <x-nav-link :href="route('index')" style="color: rgb(168, 168, 168); text-decoration: none;" :active="request()->routeIs('index')">
+                                <div class="btn btn-outline-light" >
+                                    <x-nav-link :href="route('index')" style="color: rgb(255, 255, 255); text-decoration: none;" :active="request()->routeIs('index')">
                                         {{ __('Admin') }}
                                     </x-nav-link>
                                 </div>

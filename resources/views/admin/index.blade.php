@@ -26,7 +26,18 @@
                                 <h6 class="card-subtitle">Comiesięczny raport użytkowników</h6>
                             </div>
                         </div>
-                        <div id="highcharts"></div>
+                        <div id="Highcharts-container-users"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-md-flex align-items-center">
+                            <div>
+                                <h4 class="card-title">Samochody</h4>
+                                <h6 class="card-subtitle">Comiesięczny raport samochodów</h6>
+                            </div>
+                        </div>
+                        <div id="Highcharts-container-cars"></div>
                     </div>
                 </div>
             </div>
@@ -104,19 +115,68 @@
 </div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
+
 <script type="text/javascript">
-    var user_data = <?php echo json_encode($user_data)?>;
-    Highcharts.chart('highcharts', {
+    var datas = <?php echo json_encode($datas)?>;
+
+    Highcharts.chart('Highcharts-container-users', {
+        title: {
+            text: 'Nowi użytkownicy '
+        },
+
         xAxis: {
             categories: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień','Październik', 'Listopad', 'Grudzień']
         },
-        series: [{
-            name: 'Nowy użytkownik',
-            data: user_data
+
+        plotOptions: {
+            series:{
+                allowPointSelect:true
+            }
+        },
+
+        chart: {
+            type: 'areaspline',
+        },
+
+        series:[{
+            name:'Nowi użytkownicy',
+            data:datas
         }],
-        title:{
-            text:"Zajerestrowani użytkownicy"
-        }
+
     });
 </script>
+
+<script type="text/javascript">
+    var datas_cars = <?php echo json_encode($datas_cars)?>;
+
+    Highcharts.chart('Highcharts-container-cars', {
+        title: {
+            text: 'Nowe dodane samochody'
+        },
+
+        xAxis: {
+            categories: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień','Październik', 'Listopad', 'Grudzień']
+        },
+
+        plotOptions: {
+            series:{
+                allowPointSelect:true
+            }
+        },
+
+        chart: {
+            type: 'areaspline',
+        },
+
+        series:[{
+            name:'Nowi użytkownicy',
+            data:datas_cars
+        }],
+
+    });
+</script>
+
+
 @endsection
+
+

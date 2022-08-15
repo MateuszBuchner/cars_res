@@ -3,7 +3,7 @@
 
 <div class="containerek">
     <div class="containerek">
-        <div class="containerek2">
+        <div class="containerek2 shadow-lg p-3 mb-5 bg-body rounded">
             <div class="row mb-3 p-2">
                 <form action="{{ route('cars.search') }}" method="GET">
                     <div class="row">
@@ -79,10 +79,11 @@
                     <img src="{{ asset('storage/' . $usercar->mainimage) }}" class="img-thumbnail2 imagecar" alt="" >
                 </div>
                 <div class="col-6 textcol">
-                    <h4 class="czcionka">{{ $usercar->make }} {{ $usercar->model }}</h4>
-                    <h6 class="czcionka">Rok: {{ $usercar->first_registration }} Przebieg: {{ $usercar->mileage }} </h6>            </div>
+                    <h4 class="czcionka3">{{ $usercar->make }} {{ $usercar->model }}</h4>
+                    <h6 class="czcionka3">Rok: {{ $usercar->first_registration }} Przebieg: {{ $usercar->mileage }} Rodzaj paliwa: {{ $usercar->fuel }}</h6>
+                </div>
                 <div class="col">
-                    <h5 class="czcionka price">Cena: {{ $usercar->price }}zł</h5>
+                    <h5 class="czcionka3 price">Cena: {{ $usercar->price }}zł</h5>
                 </div>
             </div>
             </a>

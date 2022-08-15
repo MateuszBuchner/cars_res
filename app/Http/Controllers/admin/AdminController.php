@@ -29,7 +29,34 @@ class AdminController extends Controller
         ->groupBy(DB::raw("Month(created_at)"))
         ->pluck('count');
 
-        return view('admin.index',compact('users','usercars','qual_admin','qual_cars','qual_img_cars','user_data'));
+        $months = User::select(DB::raw("Month(created_at) as month"))
+        ->whereYear("created_at",date('Y'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('month');
+
+        $datas = array(0,0,0,0,0,0,0,0,0,0,0,0);
+            foreach($months as $index => $month){
+                $datas[$month] = $user_data[$index];
+            }
+
+
+        $usercars_data = Usercar::select(DB::raw("COUNT(*) as count"))
+        ->whereYear("created_at",date('Y'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('count');
+
+        $months_cars = Usercar::select(DB::raw("Month(created_at) as month"))
+        ->whereYear("created_at",date('Y'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('month');
+
+        $datas_cars = array(0,0,0,0,0,0,0,0,0,0,0,0);
+            foreach($months_cars as $index => $month){
+                $datas_cars[$month] = $usercars_data[$index];
+            }
+
+
+        return view('admin.index',compact('users','usercars','qual_admin','qual_cars','qual_img_cars','user_data','datas','datas_cars'));
     }
 
     /**
