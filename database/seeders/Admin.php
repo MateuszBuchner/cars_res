@@ -21,7 +21,7 @@ class Admin extends Seeder
             'last_name' => 'adminlast',
             'phone_number' => '123456789',
             'email' => 'admin@gmail.com',
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+            'password' => '$2y$10$suozdUihaGLvnkkuLTroQeY3aN8YgtyKbf.obwff2a84b0ekUY6gC',
             'role' => 'admin',
         ]);
     }

@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
 <div class="page-wrapper">
     <div class="page-breadcrumb">
@@ -88,7 +87,7 @@
                             </span>
                             <div class="ms-3">
                                 <h5 class="mb-0 fw-bold">Akceptacja</h5>
-                                <span class="text-muted fs-6">Liczba postów do zakceptowania</span>
+                                <span class="text-muted fs-6">Liczba postów do zaakceptowania</span>
                             </div>
                             <div class="ms-auto">
                                 <span class="badge bg-light text-muted">{{ $qual_cars }}</span>
@@ -175,8 +174,4 @@
 
     });
 </script>
-
-
 @endsection
-
-

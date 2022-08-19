@@ -4,7 +4,6 @@
 
 <div class="containerek containerek4 ">
     <div class="row g-0 text-center blok shadow-lg p-3 mb-5 bg-body rounded">
-
         <div class="container-fluid mt--7">
             <div class="row">
                 <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
@@ -32,6 +31,14 @@
                                 <div><i class="ni education_hat mr-2"></i>Abonament standard</div>
                                 <hr class="my-4">
                                 <p>Zmiany w Regulaminie 18.08.2022 - zmiana regulaminu dla Klientów Biznesowych</p>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <x-responsive-nav-link style="color: rgb(0, 0, 0); text-decoration: none;" :href="route('logout')"
+                                            onclick="event.preventDefault();
+                                                        this.closest('form').submit();">
+                                        {{ __('Wyloguj się') }}
+                                    </x-responsive-nav-link>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -89,10 +96,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
 </div>
 

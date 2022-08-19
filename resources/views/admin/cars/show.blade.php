@@ -1,9 +1,6 @@
 @extends('layouts.admin')
 @section('content')
 <div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
     <div class="page-breadcrumb">
         <div class="row align-items-center">
             <div class="col-6">

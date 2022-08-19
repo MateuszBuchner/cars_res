@@ -1,29 +1,16 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Flexy lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Flexy admin lite design, Flexy admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Flexy Admin Lite Template by WrapPixel</title>
+    <title>Admin Cars</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
-    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('adm/assets/images/favicon.png') }}">
-    <!-- Custom CSS -->
     <link href="{{ asset('adm/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
     <link href="{{ asset('adm/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet">
-    <!-- Custom CSS -->
     <link href="{{ asset('adm/dist/css/style.min.css') }}" rel="stylesheet">
-
-
 </head>
-
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -36,33 +23,12 @@
         <header class="topbar" data-navbarbg="skin6">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header" data-logobg="skin6">
-                    <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
                     <a class="navbar-brand" href="/admin">
-                        <!-- Logo icon -->
                         <b class="logo-icon">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
                             <img src="{{ asset('adm/assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="{{ asset('adm/assets/images/logo-light-icon.png') }}" alt="homepage" class="light-logo" />
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="{{ asset('adm/assets/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="{{ asset('adm/assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" />
-                        </span>
                     </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- This is for the sidebar toggle which is visible on mobile only -->
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="mdi mdi-menu"></i></a>
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a>
                 </div>
             </nav>
         </header>
@@ -129,5 +95,4 @@
     <script src="{{ asset('adm/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
     <script src="{{ asset('adm/dist/js/pages/dashboards/dashboard1.js') }}"></script>
 </body>
-
 </html>
