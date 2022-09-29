@@ -32,3 +32,7 @@ Haslo: haslo1234
 
 ## Wygląd aplikacji
 
+https://user-images.githubusercontent.com/61974282/193135330-fd06c73c-59c6-4ec6-9715-c6de99fb9b7b.mp4
+
+
+
